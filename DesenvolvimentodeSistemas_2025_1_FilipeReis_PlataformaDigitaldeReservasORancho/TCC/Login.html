@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      background-color: #deb887;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .logo {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-bar {
+      background-color: rgba(85, 107, 47, 0.9);
+      position: fixed;
+      top: 60px;
+      width: 100%;
+      z-index: 999;
+      display: none;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      flex: 1;
+      max-width: 25%;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+
+    .nav-bar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-bar a i {
+      display: block;
+      font-size: 20px;
+    }
+
+    .content {
+      margin-top: 120px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 18px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    input[type="submit"],
+    .signup-btn {
+      padding: 12px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #556b2f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover,
+    .signup-btn:hover {
+      background-color: #6b8e23;
+    }
+
+    a {
+      display: block;
+      margin: 10px 0;
+      color: #556b2f;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .signup-btn {
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="menu-toggle" onclick="toggleNavBar()">
+      <i class="fa fa-bars"></i>
+    </div>
+    <div class="logo">
+      <a href="Home.html">
+        <img src="logo.png" alt="Logo" />
+      </a>
+    </div>
+    <div style="width:24px"></div>
+  </div>
+
+  <!-- Barra de navegação -->
+  <nav class="nav-bar" id="navBar">
+    <a href="Quartos.html"><i class="fa fa-home"></i></a>
+    <a href="Agendar.html"><i class="fa fa-handshake-o"></i></a>
+    <a href="Localizacao.html"><i class="fa fa-map"></i></a>
+    <a href="Contato.html"><i class="fa fa-envelope"></i></a>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <div class="content">
+    <form method="POST" action="Login.php">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="usuario@email.com" required>
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+      <a href="RedefinirSenha.html">Esqueci minha senha</a>
+
+      <input type="submit" value="Entrar">
+    </form>
+
+    <a href="Cadastro.html">
+      <button class="signup-btn">Não tenho conta</button>
+    </a>
+  </div>
+
+  <script>
+    function toggleNavBar() {
+      const navBar = document.getElementById("navBar");
+      navBar.style.display = navBar.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>

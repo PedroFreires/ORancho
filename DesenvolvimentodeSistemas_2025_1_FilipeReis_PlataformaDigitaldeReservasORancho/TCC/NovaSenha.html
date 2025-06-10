@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atualizar Senha</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-bar {
+      background-color: #deb887;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .logo {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-bar {
+      background-color: rgba(85, 107, 47, 0.9);
+      position: fixed;
+      top: 60px;
+      width: 100%;
+      display: none;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      z-index: 999;
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      flex: 1;
+      max-width: 25%;
+      text-align: center;
+    }
+
+    .nav-bar a i {
+      display: block;
+      font-size: 20px;
+    }
+
+    .content {
+      margin-top: 100px;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form input[type="submit"] {
+      background-color: #556b2f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #6b8e23;
+    }
+
+    .mensagem {
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="menu-toggle" onclick="toggleNavBar()">
+      <i class="fa fa-bars"></i>
+    </div>
+    <div class="logo">
+      <a href="Home.html">
+        <img src="logo.png" alt="Logo" />
+      </a>
+    </div>
+    <div style="width:24px"></div>
+  </div>
+
+  <!-- Barra de navegação -->
+  <nav class="nav-bar" id="navBar">
+    <a href="Quartos.html"><i class="fa fa-home"></i></a>
+    <a href="Agendar.html"><i class="fa fa-handshake-o"></i></a>
+    <a href="Localizacao.html"><i class="fa fa-map"></i></a>
+    <a href="Contato.html"><i class="fa fa-envelope"></i></a>
+  </nav>
+
+  <!-- Conteúdo -->
+  <div class="content">
+    <form method="POST" action="perfil.php" onsubmit="return validarSenha()">
+      <label for="novaSenha">Nova Senha:</label>
+      <input type="password" id="novaSenha" name="nova_senha" placeholder="Digite sua nova senha" required>
+
+      <label for="confirmarSenha">Confirmar Senha:</label>
+      <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua nova senha" required>
+
+      <input type="submit" name="alterar_senha" value="Atualizar Senha">
+    </form>
+  </div>
+
+  <script>
+    function toggleNavBar() {
+      const navBar = document.getElementById("navBar");
+      navBar.style.display = navBar.style.display === "flex" ? "none" : "flex";
+    }
+
+    function validarSenha() {
+      const senha = document.getElementById("novaSenha").value;
+      const confirmar = document.getElementById("confirmarSenha").value;
+
+      if (senha !== confirmar) {
+        alert("As senhas não coincidem.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+
+</body>
+</html>

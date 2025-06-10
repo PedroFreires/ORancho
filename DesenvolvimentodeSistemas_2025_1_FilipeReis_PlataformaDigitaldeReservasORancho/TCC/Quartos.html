@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .top-bar {
+      background-color: #deb887;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .logo {
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .user-icon {
+      font-size: 24px;
+    }
+
+    .user-icon a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .nav-bar {
+      background-color: rgba(85, 107, 47, 0.9);
+      position: fixed;
+      top: 60px;
+      width: 100%;
+      z-index: 999;
+      display: none;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      flex: 1;
+      max-width: 25%;
+      text-align: center;
+    }
+
+    .nav-bar a i {
+      display: block;
+      font-size: 20px;
+    }
+
+    .nav-bar a p {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .info-text {
+      margin-top: 80px;
+      padding: 20px;
+      text-align: center;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .info-text h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .info-text p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .gallery {
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      padding: 0 15px;
+    }
+
+    .room-card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .room-card:hover {
+      transform: scale(1.02);
+    }
+
+    .room-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .room-card p {
+      padding: 15px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .room-card strong {
+      font-size: 18px;
+      color: #000;
+      display: block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="menu-toggle" onclick="toggleNavBar()">
+      <i class="fa fa-bars"></i>
+    </div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+    </div>
+    <div class="user-icon">
+      <a href="Login.html"><i class="fa fa-user-circle"></i></a>
+    </div>
+  </div>
+
+  <!-- Barra de navegação -->
+  <nav class="nav-bar" id="navBar">
+    <a href="Quartos.html">
+      <i class="fa fa-home"></i><p>Quartos</p>
+    </a>
+    <a href="Agendar.html">
+      <i class="fa fa-handshake-o"></i><p>Agendar</p>
+    </a>
+    <a href="Localizacao.html">
+      <i class="fa fa-map"></i><p>Localização</p>
+    </a>
+    <a href="Contato.html">
+      <i class="fa fa-envelope"></i><p>Contato</p>
+    </a>
+  </nav>
+
+  <!-- Texto informativo -->
+  <div class="info-text">
+    <h2>Conheça Nossas Acomodações</h2>
+    <p>
+      Cada detalhe das nossas acomodações foi cuidadosamente pensado para proporcionar a melhor experiência aos nossos hóspedes. 
+      Seja uma viagem a dois, uma aventura em família ou uma viagem a trabalho, oferecemos uma variedade de quartos que combinam 
+      conforto, elegância e praticidade. Hospede-se com a tranquilidade de estar cercado pela natureza e com a comodidade de instalações 
+      modernas e acolhedoras.
+    </p>
+  </div>
+
+  <!-- Galeria de quartos -->
+  <div class="gallery">
+    <div class="room-card">
+      <img src="Executiva.jpeg" alt="Suíte Executiva">
+      <p><strong>Executiva:</strong> Luxo e sofisticação com vista panorâmica. Ideal para quem busca uma experiência premium.</p>
+    </div>
+    <div class="room-card">
+      <img src="Deluxe.jpeg" alt="Suíte Deluxe">
+      <p><strong>Deluxe:</strong> Espaçosa e elegante, com decoração moderna e todas as comodidades para uma estadia especial.</p>
+    </div>
+    <div class="room-card">
+      <img src="Suite.jpeg" alt="Suíte Master">
+      <p><strong>Suíte:</strong> Ambiente romântico com banheira e vista para a natureza. Perfeita para casais.</p>
+    </div>
+    <div class="room-card">
+      <img src="Quad.jpeg" alt="Quarto Quadruplo">
+      <p><strong>Quad:</strong> Espaço amplo e confortável para grupos ou famílias de até quatro pessoas.</p>
+    </div>
+    <div class="room-card">
+      <img src="Triple.jpeg" alt="Quarto Triplo">
+      <p><strong>Triple:</strong> Confortável e prático, ideal para três pessoas, com camas individuais ou de casal.</p>
+    </div>
+    <div class="room-card">
+      <img src="Double.jpeg" alt="Quarto Duplo">
+      <p><strong>Double:</strong> Perfeito para casais ou amigos. Oferece um ambiente acolhedor com camas confortáveis.</p>
+    </div>
+    <div class="room-card">
+      <img src="Standard.jpeg" alt="Quarto Standard">
+      <p><strong>Standard:</strong> Praticidade e conforto por um excelente custo-benefício, ideal para estadias curtas.</p>
+    </div>
+    <div class="room-card">
+      <img src="Single.jpeg" alt="Quarto Individual">
+      <p><strong>Single:</strong> Para quem viaja sozinho e busca uma opção econômica sem abrir mão do conforto.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleNavBar() {
+      const navBar = document.getElementById("navBar");
+      navBar.style.display = navBar.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>

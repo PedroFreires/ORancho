@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .top-bar {
+      background-color: #deb887;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .logo {
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .user-icon {
+      font-size: 24px;
+    }
+
+    .user-icon a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .nav-bar {
+      background-color: rgba(85, 107, 47, 0.9);
+      position: fixed;
+      top: 60px;
+      width: 100%;
+      z-index: 999;
+      display: none;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      flex: 1;
+      max-width: 25%;
+      text-align: center;
+    }
+
+    .nav-bar a i {
+      display: block;
+      font-size: 20px;
+    }
+
+    .nav-bar a p {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .content {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content img.main-img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .info-text {
+      margin-top: 15px;
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #2e2e2e;
+      text-align: left;
+    }
+
+    .info-text h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .gallery {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="menu-toggle" onclick="toggleNavBar()">
+      <i class="fa fa-bars"></i>
+    </div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+    </div>
+    <div class="user-icon">
+      <a href="Login.html"><i class="fa fa-user-circle"></i></a>
+    </div>
+  </div>
+
+  <!-- Barra de navegação -->
+  <nav class="nav-bar" id="navBar">
+    <a href="Quartos.html">
+      <i class="fa fa-home"></i><p>Quartos</p>
+    </a>
+    <a href="Agendar.html">
+      <i class="fa fa-handshake-o"></i><p>Agendar</p>
+    </a>
+    <a href="Localizacao.html">
+      <i class="fa fa-map"></i><p>Localização</p>
+    </a>
+    <a href="Contato.html">
+      <i class="fa fa-envelope"></i><p>Contato</p>
+    </a>
+  </nav>
+
+  <!-- Imagem principal e texto -->
+  <div class="content">
+    <img src="img4.png" alt="Imagem principal do Hotel Fazenda" class="main-img">
+
+    <div class="info-text">
+      <h2><strong>Hotel Paraíso das Cachoeiras</strong></h2>
+      <p><strong>Endereço:</strong> Estrada das Águas Cristalinas, nº 345 – Bairro Serra Verde</p>
+      <p><strong>Cidade:</strong> Vale Encantado – Estado das Cachoeiras</p>
+      <p><strong>CEP:</strong> 98765-432</p>
+      <p><strong>Telefone:</strong> (31) 99876-5432</p>
+      <p><strong>E-mail:</strong> contato@paraisodascachoeiras.com.br</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleNavBar() {
+      const navBar = document.getElementById("navBar");
+      navBar.style.display = navBar.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>

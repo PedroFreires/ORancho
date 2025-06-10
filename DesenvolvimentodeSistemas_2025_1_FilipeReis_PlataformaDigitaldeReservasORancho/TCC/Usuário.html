@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil do Usuário</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #556b2f;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: #556b2f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #6b8e23;
+    }
+    .danger {
+      background-color: #b22222;
+    }
+    .danger:hover {
+      background-color: #dc143c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Dados pessoais -->
+    <div class="section">
+      <h2>Dados Pessoais</h2>
+      <form method="POST">
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" value="(exibir do banco)" required>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" value="(exibir do banco)" required>
+
+        <button type="submit" name="atualizar">Atualizar Dados</button>
+      </form>
+    </div>
+
+    <!-- Reserva atual -->
+    <div class="section">
+      <h2>Reserva Atual</h2>
+      <p><strong>Quarto:</strong> (exibir do banco)</p>
+      <p><strong>Data:</strong> (exibir do banco)</p>
+
+      <form method="POST">
+        <button type="submit" name="cancelar_reserva">Cancelar Reserva</button>
+      </form>
+    </div>
+
+    <!-- Excluir conta -->
+    <div class="section">
+      <h2>Excluir Conta</h2>
+      <p>Ao excluir sua conta, todos os dados serão removidos permanentemente, incluindo reservas.</p>
+      <form method="POST">
+        <button class="danger" type="submit" name="excluir_conta">Excluir Conta</button>
+      </form>
+    </div>
+    
+  </div>
+</body>
+</html>
